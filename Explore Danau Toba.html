@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Explore Danau Toba</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f6f7;--surface:#fff;--ink:#10262e;--mute:#566b73;--line:#d5e0e3;--lake:#0e5a6b;--deep:#0a2f3a;--ulos:#b3261e;--gold:#e0a53a;--c1:#1d7a8c;--c2:#2f6b4f;--c3:#8a5a2b;--c4:#2b5f9e;--c5:#7a3b6e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a1f;--surface:#12272e;--ink:#e8f1f3;--mute:#9db3ba;--line:#244049;--lake:#5cc2d6}}
+:root[data-theme="dark"]{--bg:#0b1a1f;--surface:#12272e;--ink:#e8f1f3;--mute:#9db3ba;--line:#244049;--lake:#5cc2d6}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(26px,4vw,38px);margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 28px;max-width:60ch}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:20px;text-decoration:none}
+.logo i{display:inline-block;width:12px;height:12px;background:var(--ulos);border:3px solid var(--ink);margin-right:8px;transform:rotate(45deg)}
+nav a{margin-left:18px;text-decoration:none;font-weight:500;font-size:15px;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+@media(max-width:640px){nav a:not(:last-child){display:none}}
+.hero{position:relative;color:#fff;background:linear-gradient(#183f55,#2f7f93 55%,#0e5a6b);overflow:hidden;padding:0}
+.hero svg{position:absolute;inset:0;width:100%;height:100%}
+.hero .w{position:relative;padding-top:96px;padding-bottom:110px}
+.hero h1{font-size:clamp(40px,8vw,84px);font-weight:800;max-width:11ch;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+.hero p{font-size:clamp(17px,2.2vw,21px);max-width:46ch;margin:18px 0 28px}
+.search{display:flex;gap:8px;background:#fff;border-radius:14px;padding:8px;max-width:640px;box-shadow:0 12px 40px rgba(0,0,0,.28)}
+.search input{flex:1;min-width:0;border:0;font:inherit;padding:10px 12px;color:#10262e;background:none;border-radius:8px}
+.btn{border:0;background:var(--ulos);color:#fff;font:700 15px Figtree,sans-serif;padding:12px 20px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;border:2px solid currentColor;color:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:99px;font:500 14px Figtree,sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--deep);color:#fff;border-color:var(--deep)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;display:flex;flex-direction:column}
+.card:hover{border-color:var(--lake)}
+.ph{height:150px;position:relative;display:flex;align-items:flex-end;padding:12px;color:#fff;font-size:13px;font-weight:700}
+.ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:rgba(255,255,255,.18);clip-path:polygon(0 60%,25% 30%,50% 65%,75% 25%,100% 55%,100% 100%,0 100%)}
+.ph span{position:relative;z-index:1;background:rgba(0,0,0,.35);padding:3px 9px;border-radius:99px}
+.cb{padding:14px 16px 16px}
+.cb h3{font-size:19px;margin-bottom:4px}
+.meta{color:var(--mute);font-size:14px}
+.pop{color:var(--ulos);font-weight:700;font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+select{font:inherit;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.about{background:var(--deep);color:#fff}
+.about .sub{color:#b9ced4}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:8px}
+.facts b{display:block;font:800 30px Fraunces,serif;color:var(--gold)}
+.regions{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.regions button{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--ulos);border-radius:10px;padding:14px;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.regions b{display:block;font-family:Fraunces,serif;font-size:18px}
+.cta{text-align:center;background:linear-gradient(135deg,var(--lake),#0a2f3a);color:#fff;border-radius:20px;padding:48px 24px}
+.cta h2{margin-bottom:12px}.cta .btn{background:var(--gold);color:#10262e;margin-top:12px}
+footer{padding:32px 0;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+dialog{border:0;border-radius:18px;padding:0;max-width:680px;width:calc(100% - 24px);background:var(--surface);color:var(--ink);max-height:90vh}
+dialog::backdrop{background:rgba(5,20,25,.65)}
+.gal{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:90px 90px;gap:4px}
+.gal div:first-child{grid-row:span 2}
+.gal div{display:flex;align-items:flex-end;padding:8px;color:#fff;font-size:12px}
+.dc{padding:20px 24px 24px}
+.dc h3{font-size:28px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:16px 0;font-size:15px}
+.kv dt{color:var(--mute)}.kv dd{margin:0}
+.tag{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin:2px 4px 2px 0;font-size:13px}
+.x{position:absolute;right:12px;top:12px;background:rgba(0,0,0,.55);color:#fff;border:0;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer}
+.empty{padding:32px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="#"><i></i>Explore Danau Toba</a>
+<nav><a href="#populer">Populer</a><a href="#jelajah">Destinasi</a><a href="#tentang">Tentang</a><a href="#daerah">Daerah</a></nav></div></header>
+
+<section class="hero"><svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<circle cx="900" cy="230" r="58" fill="#f6c76a" opacity=".9"/>
+<path d="M0 360 L180 250 L300 320 L460 210 L620 330 L780 260 L950 340 L1200 240 V600 H0Z" fill="#1b5b6e"/>
+<path d="M0 420 L200 330 L380 400 L560 310 L760 410 L980 330 L1200 400 V600 H0Z" fill="#14495a"/>
+<path d="M420 470 Q600 400 800 470 Q640 500 420 470Z" fill="#2c6b4a"/>
+<path d="M0 470 H1200 V600 H0Z" fill="#0e5a6b"/>
+<g stroke="#fff" stroke-opacity=".25" stroke-width="3" fill="none"><path d="M100 510h200M520 540h260M900 505h220M300 570h180"/></g></svg>
+<div class="w"><h1>Jelajahi Keindahan Danau Toba</h1>
+<p>Temukan destinasi wisata, budaya, kuliner, dan pengalaman terbaik di kawasan Danau Toba.</p>
+<form class="search" id="sf" role="search"><input id="q" type="search" placeholder="Cari destinasi, daerah, atau aktivitas…" aria-label="Cari destinasi"><button class="btn" type="submit">Jelajahi Wisata</button></form></div></section>
+
+<section id="populer"><div class="w"><h2>Destinasi populer</h2><p class="sub">Tempat yang paling banyak dikunjungi wisatawan di sekitar danau.</p><div class="grid" id="pop"></div></div></section>
+
+<section style="padding-top:0"><div class="w"><h2>Kategori wisata</h2><p class="sub">Pilih jenis pengalaman yang Anda cari.</p><div class="chips" id="cats"></div></div></section>
+
+<section id="jelajah" style="background:color-mix(in srgb,var(--surface) 60%,var(--bg))"><div class="w"><h2>Jelajahi semua destinasi</h2><p class="sub" id="count"></p>
+<div class="tools"><select id="fd" aria-label="Daerah"></select><select id="fk" aria-label="Kategori"></select><select id="ff" aria-label="Fasilitas"></select><select id="fs" aria-label="Urutkan"><option value="pop">Paling populer</option><option value="nama">Nama A–Z</option></select></div>
+<div class="grid" id="list"></div></div></section>
+
+<section class="about" id="tentang"><div class="w"><h2>Tentang Danau Toba</h2><p class="sub">Danau Toba terbentuk dari letusan supervulkanik sekitar 74.000 tahun lalu dan menjadi rumah bagi budaya Batak. Di tengahnya berdiri Pulau Samosir.</p>
+<div class="facts"><div><b>Danau vulkanik terbesar</b>di dunia</div><div><b>± 100 km</b>panjang danau</div><div><b>± 500 m</b>kedalaman maksimum</div><div><b>UNESCO</b>Global Geopark sejak 2020</div></div></div></section>
+
+<section id="daerah"><div class="w"><h2>Destinasi berdasarkan daerah</h2><p class="sub">Danau Toba dikelilingi tujuh kabupaten.</p><div class="regions" id="reg"></div></div></section>
+
+<section style="padding-top:0"><div class="w"><div class="cta"><h2>Siap merencanakan perjalanan?</h2><p>Mulai dari pencarian, pilih destinasi, lalu buka rutenya di peta.</p><a class="btn" href="#jelajah">Mulai menjelajah</a></div></div></section>
+
+<footer><div class="w">© 2026 Explore Danau Toba. Jam buka dan harga tiket bersifat perkiraan; periksa kembali sebelum berkunjung. Foto pada halaman ini adalah ilustrasi.</div></footer>
+
+<dialog id="dlg"><button class="x" aria-label="Tutup" onclick="dlg.close()">×</button><div id="dbody"></div></dialog>
+
+<script>
+const D=[
+{n:"Makam Raja Sidabutar, Tomok",d:"Samosir",k:"Tomok, Simanindo",la:2.6697,lo:98.8714,c:"Budaya & Sejarah",j:"08.00–18.00",h:"Rp 5.000",f:["Parkir","Toilet","Pemandu","Toko suvenir"],a:["Wisata sejarah","Belanja ulos","Menonton tari Sigale-gale"],p:90,t:"Kompleks makam raja Batak dengan sarkofagus batu berukir. Di sekitarnya ada pasar suvenir dan pertunjukan patung Sigale-gale."},
+{n:"Batu Kursi Siallagan",d:"Samosir",k:"Ambarita, Simanindo",la:2.6322,lo:98.7449,c:"Budaya & Sejarah",j:"08.00–18.00",h:"Rp 10.000",f:["Parkir","Toilet","Pemandu","Warung"],a:["Wisata sejarah","Fotografi","Belajar adat Batak"],p:95,t:"Kursi batu tempat sidang adat masa lalu, dikelilingi rumah adat Batak di desa yang masih terjaga."},
+{n:"Pantai Pasir Putih Parbaba",d:"Samosir",k:"Pangururan",la:2.6076,lo:98.6856,c:"Pantai",j:"07.00–19.00",h:"Rp 10.000",f:["Parkir","Toilet","Penginapan","Warung"],a:["Berenang","Berjemur","Piknik","Jet ski"],p:88,t:"Hamparan pasir putih di tepi danau dengan air jernih, cocok untuk keluarga."},
+{n:"Menara Pandang Tele",d:"Samosir",k:"Harian",la:2.5883,lo:98.6903,c:"Alam",j:"07.00–18.00",h:"Rp 10.000",f:["Parkir","Toilet","Warung","Spot foto"],a:["Menikmati panorama","Fotografi","Piknik"],p:92,t:"Titik pandang dari ketinggian yang memperlihatkan hamparan Danau Toba dan perbukitan di sekelilingnya."},
+{n:"Aek Rangat Pangururan",d:"Samosir",k:"Pangururan",la:2.6038,lo:98.6989,c:"Alam",j:"07.00–19.00",h:"Rp 10.000",f:["Parkir","Toilet","Kolam air panas"],a:["Berendam air panas","Bersantai"],p:70,t:"Pemandian air panas alami di tepi danau, nyaman untuk beristirahat setelah berkeliling."},
+{n:"Museum Huta Bolon Simanindo",d:"Samosir",k:"Simanindo",la:2.5693,lo:98.7406,c:"Budaya & Sejarah",j:"09.00–17.00",h:"Rp 20.000",f:["Parkir","Toilet","Pemandu"],a:["Pertunjukan tari Batak","Belajar budaya","Fotografi"],p:75,t:"Rumah adat dan museum yang menyimpan koleksi budaya Batak, dengan pertunjukan tari pada jam tertentu."},
+{n:"Air Terjun Sipiso-piso",d:"Karo",k:"Merek",la:2.9167,lo:98.5131,c:"Air Terjun",j:"07.00–18.00",h:"Rp 10.000",f:["Parkir","Toilet","Warung","Spot foto"],a:["Menikmati panorama","Fotografi","Trekking ringan"],p:93,t:"Air terjun tinggi yang jatuh langsung ke lembah dengan pemandangan Danau Toba dari atas."},
+{n:"Pantai Bebas Parapat",d:"Simalungun",k:"Girsang Sipangan Bolon",la:2.6667,lo:98.937,c:"Pantai",j:"24 jam",h:"Gratis",f:["Parkir","Toilet","Hotel","Restoran"],a:["Bersantai","Kuliner","Naik perahu"],p:85,t:"Tepi danau di Parapat, pintu masuk populer menuju Pulau Samosir dengan banyak hotel dan restoran."},
+{n:"Batu Gantung Parapat",d:"Simalungun",k:"Girsang Sipangan Bolon",la:2.6637,lo:98.9328,c:"Budaya & Sejarah",j:"08.00–18.00",h:"Rp 5.000",f:["Parkir","Warung","Perahu"],a:["Mendengar legenda","Fotografi","Naik perahu"],p:72,t:"Batu yang menggantung di tebing dengan legenda seorang gadis, mudah dijangkau dari Parapat."},
+{n:"Pantai Lumban Bulbul",d:"Toba",k:"Balige",la:2.334,lo:99.064,c:"Pantai",j:"07.00–19.00",h:"Rp 5.000",f:["Parkir","Toilet","Warung","Spot foto"],a:["Menikmati matahari terbit","Piknik","Fotografi"],p:80,t:"Pantai tenang di Balige dengan pemandangan matahari terbit dan jembatan kayu yang ramai difoto."},
+{n:"Taman Eden 100",d:"Toba",k:"Lumban Julu",la:2.401,lo:99.058,c:"Alam",j:"08.00–18.00",h:"Rp 15.000",f:["Parkir","Toilet","Warung","Spot foto"],a:["Fotografi","Bermain keluarga","Menikmati panorama"],p:78,t:"Taman wisata di perbukitan dengan taman bunga, area bermain, dan pemandangan danau."},
+{n:"Taman Wisata Iman Sipoholon",d:"Tapanuli Utara",k:"Sipoholon",la:2.02,lo:98.96,c:"Religi",j:"08.00–18.00",h:"Rp 10.000",f:["Parkir","Toilet","Warung"],a:["Wisata religi","Jalan santai","Fotografi"],p:68,t:"Taman ziarah di perbukitan dengan jalan salib, patung, dan taman yang rindang."},
+{n:"Istana Sisingamangaraja XII, Bakkara",d:"Humbang Hasundutan",k:"Baktiraja",la:2.355,lo:98.811,c:"Budaya & Sejarah",j:"08.00–17.00",h:"Gratis",f:["Parkir","Toilet","Pemandu"],a:["Wisata sejarah","Belajar budaya"],p:65,t:"Kompleks peninggalan Raja Sisingamangaraja XII, pahlawan nasional dari tanah Batak."},
+{n:"Danau dan Desa Silalahi",d:"Dairi",k:"Silahisabungan",la:2.738,lo:98.558,c:"Alam",j:"24 jam",h:"Gratis",f:["Parkir","Penginapan","Warung"],a:["Menikmati panorama","Berperahu","Mengenal desa adat"],p:60,t:"Desa di tepi barat laut Danau Toba dengan kampung adat dan pemandangan tebing yang tenang."}
+];
+const $=s=>document.querySelector(s),uniq=k=>[...new Set(D.flatMap(x=>[].concat(x[k])))].sort();
+const col={"Alam":"--c2","Pantai":"--c1","Air Terjun":"--c4","Budaya & Sejarah":"--c3","Religi":"--c5"};
+const bg=c=>`linear-gradient(160deg,var(${col[c]||"--c1"}),var(--deep))`;
+const st={q:"",d:"",k:"",f:"",s:"pop"};
+const card=(x,i)=>`<button class="card" onclick="openD(${D.indexOf(x)})"><div class="ph" style="background:${bg(x.c)}"><span>${x.c}</span></div><div class="cb"><h3>${x.n}</h3><div class="meta">${x.d} · ${x.k}</div><div class="pop">Popularitas ${x.p}/100</div></div></button>`;
+function fill(id,label,arr,key){const e=$(id);e.innerHTML=`<option value="">${label}</option>`+arr.map(v=>`<option>${v}</option>`).join("");e.onchange=()=>{st[key]=e.value;render()}}
+fill("#fd","Semua daerah",uniq("d"),"d");fill("#fk","Semua kategori",uniq("c"),"k");fill("#ff","Semua fasilitas",uniq("f"),"f");
+$("#fs").onchange=e=>{st.s=e.target.value;render()};
+$("#pop").innerHTML=[...D].sort((a,b)=>b.p-a.p).slice(0,4).map(card).join("");
+const catEl=$("#cats");
+catEl.innerHTML=["Semua",...uniq("c")].map(c=>`<button class="chip" aria-pressed="${c==="Semua"}" data-c="${c}">${c}</button>`).join("");
+catEl.onclick=e=>{const c=e.target.dataset.c;if(!c)return;st.k=c==="Semua"?"":c;$("#fk").value=st.k;render();location.hash="jelajah"};
+$("#reg").innerHTML=uniq("d").map(d=>`<button data-d="${d}"><b>${d}</b><span class="meta">${D.filter(x=>x.d===d).length} destinasi</span></button>`).join("");
+$("#reg").onclick=e=>{const b=e.target.closest("button");if(!b)return;st.d=b.dataset.d;$("#fd").value=st.d;render();location.hash="jelajah"};
+$("#sf").onsubmit=e=>{e.preventDefault();st.q=$("#q").value.trim().toLowerCase();render();location.hash="jelajah"};
+function render(){
+ let r=D.filter(x=>(!st.q||(x.n+x.d+x.k+x.c+x.a.join()+x.f.join()).toLowerCase().includes(st.q))&&(!st.d||x.d===st.d)&&(!st.k||x.c===st.k)&&(!st.f||x.f.includes(st.f)));
+ r.sort(st.s==="pop"?(a,b)=>b.p-a.p:(a,b)=>a.n.localeCompare(b.n));
+ $("#count").textContent=`${r.length} destinasi ditemukan`;
+ $("#list").innerHTML=r.length?r.map(card).join(""):`<div class="empty">Tidak ada destinasi yang cocok. Hapus beberapa filter atau ubah kata kunci.</div>`;
+ catEl.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",(b.dataset.c==="Semua"&&!st.k)||b.dataset.c===st.k));
+}
+function openD(i){const x=D[i],tags=a=>a.map(t=>`<span class="tag">${t}</span>`).join("");
+ const tiles=["Foto utama","Galeri 1","Galeri 2"].map((t,j)=>`<div style="background:linear-gradient(${150+j*40}deg,var(${col[x.c]}),var(--deep))">${t}</div>`).join("");
+ $("#dbody").innerHTML=`<div class="gal">${tiles}</div><div class="dc"><h3>${x.n}</h3><div class="meta">${x.c} · ${x.d}</div><p>${x.t}</p>
+ <dl class="kv"><dt>Lokasi</dt><dd>${x.k}, Kab. ${x.d}</dd><dt>Koordinat</dt><dd>${x.la}, ${x.lo}</dd><dt>Jam buka</dt><dd>${x.j}</dd><dt>Tiket</dt><dd>${x.h}</dd><dt>Fasilitas</dt><dd>${tags(x.f)}</dd><dt>Aktivitas</dt><dd>${tags(x.a)}</dd></dl>
+ <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=${x.la},${x.lo}">Buka di Google Maps</a></div>`;dlg.showModal()}
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+render();
+</script>
+</body>
+</html>
